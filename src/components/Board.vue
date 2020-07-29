@@ -1,7 +1,7 @@
 <template>
 <v-container>
   <v-row>
-    <v-col class="col-12 col-sm-4">
+    <v-col class="col-12 col-sm">
       <v-card
         class="mx-auto"
         raised
@@ -13,7 +13,7 @@
         <v-card-actions class="bar info"></v-card-actions>
       </v-card>
     </v-col>
-    <v-col class="col-12 col-sm-4">
+    <v-col class="col-12 col-sm">
       <v-card
         class="mx-auto"
         raised
@@ -25,7 +25,7 @@
         <v-card-actions class="bar success"></v-card-actions>
       </v-card>
     </v-col>
-    <v-col class="col-12 col-sm-4">
+    <v-col class="col-12 col-sm">
       <v-card
         class="mx-auto"
         raised

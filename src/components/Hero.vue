@@ -6,8 +6,8 @@
     tile
     outlined
   >
-    <v-row class="section align-center">
-      <v-col class="col-12 col-md-6">
+    <v-row class="section align-center justify-center">
+      <v-col class="text-center">
         <h1 class="title">
           <img src="@/assets/mask.svg" alt="Mask" class="image mask-icon">
           Covid - 19
@@ -15,8 +15,6 @@
         <h2 class="subtitle">
           Coronavirus cases tracker
         </h2>
-      </v-col>
-      <v-col class="col-12 col-md-6 text-md-right">
         <h4>{{new Date().toLocaleString().toLowerCase()}}</h4>
       </v-col>
     </v-row>
@@ -42,7 +40,7 @@ export default {
     .section {
       .title {
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
         font-size: 2rem !important;
         font-weight: 600;
