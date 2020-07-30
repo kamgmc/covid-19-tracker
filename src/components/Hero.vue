@@ -15,7 +15,7 @@
         <h2 class="subtitle">
           Coronavirus cases tracker
         </h2>
-        <h4>{{new Date().toLocaleString().toLowerCase()}}</h4>
+        <h4 v-if="lastUpdated">Last update: {{new Date(lastUpdated).toLocaleString().toLowerCase()}}</h4>
       </v-col>
     </v-row>
   </v-card>
@@ -28,7 +28,8 @@ export default {
   name: 'hero',
   computed: {
     ...mapGetters([
-      'loadingStatus'
+      'loadingStatus',
+      'lastUpdated'
     ])
   }
 }

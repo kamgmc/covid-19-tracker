@@ -29,6 +29,16 @@ export default {
 }
 </script>
 <style lang="scss">
+  .v-application {
+    .v-card{
+      .yellow {
+        background-color: #FBBD0E !important;
+      }
+      .yellow--text {
+        color: #FBBD0E !important;
+      }
+    }
+  }
   .section {
     padding: 1rem 1.5rem;
   }
