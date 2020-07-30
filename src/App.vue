@@ -6,6 +6,22 @@
     <v-main>
       <router-view/>
     </v-main>
+    <v-footer
+      dark
+      class="text-center justify-center">
+      &copy; Developed by &nbsp;
+      <a
+        href="https://github.com/kamgmc"
+        class="ml-1 mr-1 white--text font-weight-bold">
+        Kevin Martinez
+      </a>
+      <strong>-</strong>
+      <a
+        href="https://github.com/kamgmc/covid-19-tracker"
+        class="ml-1 white--text font-weight-bold">
+        Github Project
+      </a>
+    </v-footer>
   </v-app>
 </template>
 
