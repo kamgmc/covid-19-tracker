@@ -7,7 +7,7 @@
           :items="countries"
           :loading="isLoading"
           :search-input.sync="search"
-          color="#8c67ef"
+          color="#149F84"
           hide-no-data
           hide-selected
           item-text="name"
