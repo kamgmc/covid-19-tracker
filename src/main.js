@@ -14,6 +14,7 @@ new Vue({
   store,
   created () {
     this.$store.dispatch('fetchCountryDetail')
+    this.$store.dispatch('fetchDailyStats')
   },
   vuetify,
   render: h => h(App)

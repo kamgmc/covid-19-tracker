@@ -3,6 +3,7 @@
     <hero></hero>
     <selector></selector>
     <board></board>
+    <charts></charts>
     <v-main>
       <router-view/>
     </v-main>
@@ -29,11 +30,13 @@
 import Hero from './components/Hero'
 import Selector from './components/Selector'
 import Board from './components/Board'
+import Charts from './components/Charts'
 
 export default {
   name: 'App',
 
   components: {
+    Charts,
     Selector,
     Hero,
     Board
@@ -45,13 +48,29 @@ export default {
 }
 </script>
 <style lang="scss">
-  .v-application {
-    .v-card{
+  html, body {
+    background-color: #F1F3F4;
+  }
+  .v-application--wrap{
+    background-color: #F1F3F4;
+    .v-card, .container{
       .yellow {
-        background-color: #FBBD0E !important;
+        background-color: #f2a029 !important;
       }
       .yellow--text {
-        color: #FBBD0E !important;
+        color: #f2a029 !important;
+      }
+      .success {
+        background-color: #149F84 !important;
+      }
+      .success--text {
+        color: #149F84 !important;
+      }
+      .error {
+        background-color: #FF5364 !important;
+      }
+      .error--text {
+        color: #FF5364 !important;
       }
     }
   }

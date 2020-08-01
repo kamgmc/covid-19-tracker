@@ -10,6 +10,7 @@ export default new Vuex.Store({
   state: {
     currentCountry: countryInitialState,
     countryDetails: null,
+    dailyStats: null,
     isLoading: true
   },
   mutations: {
@@ -18,6 +19,9 @@ export default new Vuex.Store({
     },
     updateCountryDetail: (state, payload) => {
       state.countryDetails = payload
+    },
+    updateDailyStats: (state, payload) => {
+      state.dailyStats = payload
     },
     loading: state => (state.isLoading = true),
     loaded: state => (state.isLoading = false)
@@ -28,7 +32,20 @@ export default new Vuex.Store({
     recovered: state => state.countryDetails?.recovered.value,
     deaths: state => state.countryDetails?.deaths.value,
     lastUpdated: state => state.countryDetails?.lastUpdate,
-    loadingStatus: state => state.isLoading
+    loadingStatus: state => state.isLoading,
+    dailyStats: state => state.dailyStats,
+    newInfected: state => {
+      if (!state.dailyStats) return
+      const lastIndex = state.dailyStats.length - 1
+
+      return state.dailyStats[lastIndex].confirmed.total - state.dailyStats[lastIndex - 1].confirmed.total
+    },
+    newDeaths: state => {
+      if (!state.dailyStats) return
+      const lastIndex = state.dailyStats.length - 1
+
+      return state.dailyStats[lastIndex].deaths.total - state.dailyStats[lastIndex - 1].deaths.total
+    }
   },
   actions: {
     fetchCountryDetail: ({ state, commit }) => {
@@ -39,6 +56,14 @@ export default new Vuex.Store({
       axios.get(url)
         .then(response => {
           commit('updateCountryDetail', response.data)
+        })
+        .finally(() => commit('loaded'))
+    },
+    fetchDailyStats: ({ commit }) => {
+      commit('loading')
+      axios.get(process.env.VUE_APP_API_URL + '/daily')
+        .then(response => {
+          commit('updateDailyStats', response.data)
         })
         .finally(() => commit('loaded'))
     }
