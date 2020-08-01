@@ -4,7 +4,7 @@
     <v-col class="col-12 col-sm">
       <v-card
         class="mx-auto"
-        raised
+        outlined
       >
         <v-card-subtitle class="pb-0 font-weight-bold black--text">Infected</v-card-subtitle>
         <v-card-title class="pt-0 yellow--text card-number" v-if="infected">{{new Intl.NumberFormat().format(infected)}}</v-card-title>
@@ -15,9 +15,16 @@
     <v-col class="col-12 col-sm">
       <v-card
         class="mx-auto"
-        raised
+        outlined
       >
-        <v-card-subtitle class="pb-0 font-weight-bold black--text">Recovered</v-card-subtitle>
+        <v-card-subtitle class="pb-0 font-weight-bold black--text">
+          Recovered
+          <span
+            v-if="infected && recovered"
+            class="success--text">
+            {{new Intl.NumberFormat().format((100 * recovered / infected).toFixed(0))}}%
+          </span>
+        </v-card-subtitle>
         <v-card-title class="pt-0 success--text card-number" v-if="recovered">{{new Intl.NumberFormat().format(recovered)}}</v-card-title>
         <v-card-text>Number of recoveries from COVID-19.</v-card-text>
         <v-card-actions class="bar success"></v-card-actions>
@@ -26,9 +33,16 @@
     <v-col class="col-12 col-sm">
       <v-card
         class="mx-auto"
-        raised
+        outlined
       >
-        <v-card-subtitle class="pb-0 font-weight-bold black--text">Deaths</v-card-subtitle>
+        <v-card-subtitle class="pb-0 font-weight-bold black--text">
+          Deaths
+          <span
+            v-if="infected && deaths"
+            class="error--text">
+            {{new Intl.NumberFormat().format((100 * deaths / infected).toFixed(0))}}%
+          </span>
+        </v-card-subtitle>
         <v-card-title class="pt-0 error--text card-number" v-if="deaths">{{new Intl.NumberFormat().format(deaths)}}</v-card-title>
         <v-card-text>Number of deaths caused by COVID-19.</v-card-text>
         <v-card-actions class="bar error"></v-card-actions>
