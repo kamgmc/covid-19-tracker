@@ -1,29 +1,24 @@
 # covid-19-tracking
 
-## Project setup
+####[Demo](https://covid-19-stat-tracker.herokuapp.com)
+
+## Installation
+```
+git clone https://github.com/kamgmc/covid-19-tracker.git
+```
+
+```
+cd covid-19-tracking
+```
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+npm start
 ```
 
-### Run your unit tests
-```
-npm run test:unit
-```
+## Data Source
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+All data is provide by [https://covid19.mathdro.id/api](https://github.com/mathdroid/covid-19-api)
