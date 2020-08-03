@@ -8,11 +8,6 @@
       >
         <v-card-subtitle class="pb-0 font-weight-bold black--text">
           Infected
-          <span
-            v-if="infected && recovered && deaths"
-            class="yellow--text">
-            {{new Intl.NumberFormat().format((100 * (infected - recovered - deaths) / infected).toFixed(0))}}%
-          </span>
         </v-card-subtitle>
         <v-card-title class="pt-0 yellow--text card-number" v-if="infected">{{new Intl.NumberFormat().format(infected)}}</v-card-title>
         <v-card-text>Number of active COVID-19 cases.</v-card-text>
