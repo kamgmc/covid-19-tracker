@@ -1,6 +1,6 @@
 # covid-19-tracking
 
-####[Demo](https://covid-19-stat-tracker.herokuapp.com)
+[Demo](https://covid-19-stat-tracker.herokuapp.com)
 
 ## Installation
 ```
